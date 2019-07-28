@@ -11,3 +11,7 @@ The list of features:
 * show the results in a pretty way
 * allow the user to view a stream
 * see a total viewers count updated in real time
+
+## Main structure of the app
+
+## Libraries used
