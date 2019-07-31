@@ -1,24 +1,31 @@
 import React from "react";
 import SearchMode from "./features/SearchMode";
+import ReactTwitchEmbedVideo from "react-twitch-embed-video";
 
 export default class TwitchALizer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchTerm: "",
-      totalResults: 10,
       watchMode: false,
       watching: "",
+      streamData: {},
       totalViewers: 0
     };
+    this.handleSelectedStream = this.handleSelectedStream.bind(this);
+  }
+
+  handleSelectedStream(selectedStream) {
+    this.setState({ watchMode: true, streamData: selectedStream });
   }
 
   render() {
     let view;
     if (this.state.watchMode) {
-      view = <h1>View Mode</h1>;
+      view = (
+        <ReactTwitchEmbedVideo channel={this.state.streamData.channel.name} />
+      );
     } else {
-      view = <SearchMode />;
+      view = <SearchMode handleSelectedStream={this.handleSelectedStream} />;
     }
 
     return view;

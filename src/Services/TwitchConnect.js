@@ -1,37 +1,46 @@
 import { TWITCH_KEY, BASE_URL } from "./TwitchKey";
-import axios from "axios";
+import axios from "axios-jsonp-pro";
+import { isDev } from "./constants";
+import { mockdata } from "./mockdata";
 
 let isRequestInProgress = false;
 
-const requestManager = searchTerm => {
+async function requestManager(searchTerm, totalResults) {
   if (
     typeof searchTerm === "string" &&
-    searchTerm.length > 2 &&
+    searchTerm !== "" &&
     !isRequestInProgress
   ) {
-    const query = createQuery(searchTerm);
+    const query = createQuery(searchTerm, totalResults);
     isRequestInProgress = true;
-    makeRequest(query);
+    return makeRequest(query);
+  } else {
+    console.warn(
+      `request not made, either there is already a request queued (isRequestInProgress: ${isRequestInProgress}) or the search term was empty (search term: ${searchTerm}`
+    );
   }
-};
+}
 
-function createQuery(searchParam) {
+function createQuery(searchParam, totalResults) {
   return `${BASE_URL}?client_id=${TWITCH_KEY}&query=${encodeURIComponent(
     searchParam
-  )}`;
+  )}&limit=${totalResults}`;
 }
 
 function makeRequest(url) {
   var config = {
-    headers: { "Access-Control-Allow-Origin": "https://api.twitch.tv" }
+    headers: { "Access-Control-Allow-Origin": "*" }
   };
 
-  axios
-    .get(url, config)
-    .then(function(response) {
-      // handle success
-      console.log(response);
-    })
+  if (isDev) {
+    //For DEV only - this is just so I don't flood Twitch API while developping (or in the unlikely event Twitch is down)
+    isRequestInProgress = false;
+    return mockdata;
+  }
+
+  //https://github.com/justintv/Twitch-API/issues/133
+  return axios
+    .jsonp(url, config)
     .catch(function(error) {
       // handle error
       console.log(error);
