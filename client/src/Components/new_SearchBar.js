@@ -1,32 +1,34 @@
-import React from 'react';
-import Input from '@material-ui/core/Input';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import SearchOutlined from '@material-ui/icons/SearchOutlined';
+// this component is unsed it was a simpler implementation of the search bar without the incremental search
 
-const SearchBar = props => {
-  function handleKeyDown(event) {
-    if (event.keyCode === 13) {
-      event.target.value !== ''
-        ? props.onSearchChange(event.target.value)
-        : alert('you need to search something!');
-    }
-  }
+// import React from 'react';
+// import Input from '@material-ui/core/Input';
+// import InputAdornment from '@material-ui/core/InputAdornment';
+// import SearchOutlined from '@material-ui/icons/SearchOutlined';
 
-  return (
-    <>
-      <Input
-        autoFocus
-        onKeyDown={handleKeyDown}
-        startAdornment={
-          <InputAdornment position="start">
-            <SearchOutlined />
-          </InputAdornment>
-        }
-        type="text"
-        placeholder="search streams"
-      />
-    </>
-  );
-};
+// const SearchBar = props => {
+//   function handleKeyDown(event) {
+//     if (event.keyCode === 13) {
+//       event.target.value !== ''
+//         ? props.onSearchChange(event.target.value)
+//         : alert('you need to search something!');
+//     }
+//   }
 
-export default SearchBar;
+//   return (
+//     <>
+//       <Input
+//         autoFocus
+//         onKeyDown={handleKeyDown}
+//         startAdornment={
+//           <InputAdornment position="start">
+//             <SearchOutlined />
+//           </InputAdornment>
+//         }
+//         type="text"
+//         placeholder="search streams"
+//       />
+//     </>
+//   );
+// };
+
+// export default SearchBar;

@@ -1,7 +1,7 @@
-import react from 'react';
+import React from 'react';
 
 const WatchCount = props => {
-  return <p>Watching Now: {props.viewers}</p>;
+  return <h3>Watching Now: {props.viewers}</h3>;
 };
 
 export default WatchCount;

@@ -1,12 +1,12 @@
-import axios from "axios";
+import axios from 'axios';
 
-function createQuery(searchParam, totalResults) {
+export function createQuery(searchParam, totalResults) {
   const param = encodeURIComponent(searchParam);
   return `/api/search?term=${param}&limit=${totalResults}`;
 }
 
 async function requestManager(searchTerm, totalResults) {
-  if (typeof searchTerm === "string" && searchTerm !== "") {
+  if (typeof searchTerm === 'string' && searchTerm !== '') {
     const query = createQuery(searchTerm, totalResults);
     return makeRequest(query);
   } else {
@@ -23,7 +23,7 @@ async function makeRequest(url) {
     return response.data;
   } catch (error) {
     console.error(error);
-    return "error";
+    return 'error';
   }
 }
 

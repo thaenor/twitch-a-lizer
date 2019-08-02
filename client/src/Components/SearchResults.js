@@ -37,7 +37,7 @@ const SearchResults = props => {
         };
 
         return (
-          <div key={stream._id} id={stream._id} onClick={handleClick}>
+          <div key={stream._id}>
             <Link to={linkTo} className={classes.link}>
               <ListItem alignItems="flex-start">
                 <ListItemAvatar>
@@ -68,14 +68,6 @@ const SearchResults = props => {
       })}
     </List>
   );
-
-  function handleClick(event) {
-    const clickedStreamId = event.currentTarget.id;
-    const stream = props.data.find(element => {
-      return element._id == clickedStreamId; // eslint-disable-line eqeqeq
-    });
-    props.handleListClick(stream);
-  }
 
   return streamList;
 };

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Link renders correctly 1`] = `
+exports[`SearchBar renders correctly 1`] = `
 <div
   className="MuiInputBase-root MuiInput-root MuiInput-underline MuiInputBase-adornedStart"
   onClick={[Function]}
@@ -35,5 +35,398 @@ exports[`Link renders correctly 1`] = `
     placeholder="search streams"
     type="text"
   />
+</div>
+`;
+
+exports[`SearchResults renders correctly 1`] = `
+<ul
+  className="MuiList-root makeStyles-root-44 MuiList-padding"
+>
+  <div
+    id={35077447744}
+    onClick={[Function]}
+  >
+    <a
+      className="makeStyles-link-46"
+      href="/watch/sonicshadowsilver2"
+      onClick={[Function]}
+    >
+      <li
+        className="MuiListItem-root MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+        disabled={false}
+      >
+        <div
+          className="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart"
+        >
+          <div
+            className="MuiAvatar-root"
+          >
+            <img
+              alt="Final Fantasy X"
+              className="MuiAvatar-img"
+              src="https://static-cdn.jtvnw.net/previews-ttv/live_user_sonicshadowsilver2-80x45.jpg"
+            />
+          </div>
+        </div>
+        <div
+          className="MuiListItemText-root MuiListItemText-multiline"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+          >
+            Final Fantasy X
+          </span>
+          <p
+            className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            <span
+              className="MuiTypography-root makeStyles-inline-45 MuiTypography-body2 MuiTypography-colorTextPrimary"
+            >
+              Sonicshadowsilver2
+            </span>
+            <br />
+            !mod Better FFX Mod - Any% run (Should finish this time!)
+          </p>
+        </div>
+      </li>
+      <li
+        className="MuiDivider-root MuiDivider-inset"
+        role="separator"
+      />
+    </a>
+  </div>
+  <div
+    id={35075358048}
+    onClick={[Function]}
+  >
+    <a
+      className="makeStyles-link-46"
+      href="/watch/sonicunleashed42"
+      onClick={[Function]}
+    >
+      <li
+        className="MuiListItem-root MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+        disabled={false}
+      >
+        <div
+          className="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart"
+        >
+          <div
+            className="MuiAvatar-root"
+          >
+            <img
+              alt="Sonic Adventure DX: Director's Cut"
+              className="MuiAvatar-img"
+              src="https://static-cdn.jtvnw.net/previews-ttv/live_user_sonicunleashed42-80x45.jpg"
+            />
+          </div>
+        </div>
+        <div
+          className="MuiListItemText-root MuiListItemText-multiline"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+          >
+            Sonic Adventure DX: Director's Cut
+          </span>
+          <p
+            className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            <span
+              className="MuiTypography-root makeStyles-inline-45 MuiTypography-body2 MuiTypography-colorTextPrimary"
+            >
+              SonicUnleashed42
+            </span>
+            <br />
+            Unleasheds Adventure! - Sonic Adventure DX
+          </p>
+        </div>
+      </li>
+      <li
+        className="MuiDivider-root MuiDivider-inset"
+        role="separator"
+      />
+    </a>
+  </div>
+  <div
+    id={35077211728}
+    onClick={[Function]}
+  >
+    <a
+      className="makeStyles-link-46"
+      href="/watch/sonicsemtex"
+      onClick={[Function]}
+    >
+      <li
+        className="MuiListItem-root MuiListItem-gutters MuiListItem-alignItemsFlexStart"
+        disabled={false}
+      >
+        <div
+          className="MuiListItemAvatar-root MuiListItemAvatar-alignItemsFlexStart"
+        >
+          <div
+            className="MuiAvatar-root"
+          >
+            <img
+              alt="Rocket League"
+              className="MuiAvatar-img"
+              src="https://static-cdn.jtvnw.net/previews-ttv/live_user_sonicsemtex-80x45.jpg"
+            />
+          </div>
+        </div>
+        <div
+          className="MuiListItemText-root MuiListItemText-multiline"
+        >
+          <span
+            className="MuiTypography-root MuiListItemText-primary MuiTypography-body1"
+          >
+            Rocket League
+          </span>
+          <p
+            className="MuiTypography-root MuiListItemText-secondary MuiTypography-body2 MuiTypography-colorTextSecondary"
+          >
+            <span
+              className="MuiTypography-root makeStyles-inline-45 MuiTypography-body2 MuiTypography-colorTextPrimary"
+            >
+              SonicSemtex
+            </span>
+            <br />
+            PC-UK | Rocket Pleb \\\\ chill until 12:30(am) GMT
+          </p>
+        </div>
+      </li>
+      <li
+        className="MuiDivider-root MuiDivider-inset"
+        role="separator"
+      />
+    </a>
+  </div>
+</ul>
+`;
+
+exports[`TotalResultsSlider renders correctly 1`] = `
+<div
+  className="makeStyles-root-108"
+>
+  <p
+    className="MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom"
+    id="discrete-slider"
+  >
+    Total Results 
+  </p>
+  <span
+    className="MuiSlider-root"
+    onMouseDown={[Function]}
+  >
+    <span
+      className="MuiSlider-rail"
+    />
+    <span
+      className="MuiSlider-track"
+      style={
+        Object {
+          "left": "0%",
+          "width": "NaN%",
+        }
+      }
+    />
+    <input
+      type="hidden"
+      value=""
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "0%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "0%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "10.1010101010101%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "10.1010101010101%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "20.2020202020202%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "20.2020202020202%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "30.303030303030305%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "30.303030303030305%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "40.4040404040404%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "40.4040404040404%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "50.505050505050505%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "50.505050505050505%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "60.60606060606061%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "60.60606060606061%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "70.70707070707071%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "70.70707070707071%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "80.8080808080808%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "80.8080808080808%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-mark"
+      style={
+        Object {
+          "left": "90.9090909090909%",
+        }
+      }
+    />
+    <span
+      className="MuiSlider-markLabel"
+      style={
+        Object {
+          "left": "90.9090909090909%",
+        }
+      }
+    />
+    <span
+      aria-labelledby="discrete-slider"
+      aria-orientation="horizontal"
+      aria-valuemax={100}
+      aria-valuemin={1}
+      aria-valuetext="undefined results"
+      className="MuiSlider-thumb PrivateValueLabel-thumb-124"
+      data-index={0}
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseOver={[Function]}
+      role="slider"
+      style={
+        Object {
+          "left": "NaN%",
+        }
+      }
+      tabIndex={0}
+    >
+      <span
+        className="PrivateValueLabel-offset-126 MuiSlider-valueLabel"
+      >
+        <span
+          className="PrivateValueLabel-circle-127"
+        >
+          <span
+            className="PrivateValueLabel-label-128"
+          />
+        </span>
+      </span>
+    </span>
+  </span>
 </div>
 `;
