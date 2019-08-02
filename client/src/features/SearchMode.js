@@ -1,9 +1,9 @@
-import React from "react";
-import ClipLoader from "react-spinners/ClipLoader";
-import SearchBar from "../Components/SearchBar";
-import TotalResultsSlider from "../Components/TotalResultsSlider";
-import SearchResults from "../Components/SearchResults";
-import requestManager from "../Services/TwitchConnect";
+import React from 'react';
+import ClipLoader from 'react-spinners/ClipLoader';
+import SearchBar from '../Components/SearchBar';
+import TotalResultsSlider from '../Components/TotalResultsSlider';
+import SearchResults from '../Components/SearchResults';
+import requestManager from '../Services/TwitchConnect';
 
 class SearchMode extends React.Component {
   constructor(props) {
@@ -12,8 +12,9 @@ class SearchMode extends React.Component {
     let m = localStorage.getItem('totalResults');
     m = m === null ? 30 : parseInt(m);
     this.state = {
-      searchTerm: "",
+      searchTerm: '',
       totalResults: m,
+      receivedResults: 0,
       isLoading: false,
       loadingDone: false,
       searchResults: {}
@@ -39,7 +40,7 @@ class SearchMode extends React.Component {
   }
 
   handleMaxResults(value) {
-    localStorage.setItem('totalResults',value);
+    localStorage.setItem('totalResults', value);
     this.setState(prevState => ({
       ...prevState,
       totalResults: value
@@ -47,27 +48,26 @@ class SearchMode extends React.Component {
   }
 
   handleSearch() {
-    requestManager(this.state.searchTerm, this.state.totalResults)
-      .then(result => {
+    requestManager(this.state.searchTerm, this.state.totalResults).then(
+      result => {
         this.setState(prevState => ({
           ...prevState,
-          searchResults: result,
+          searchResults: result.streams,
+          receivedResults: result._total,
           isLoading: false,
           loadingDone: true
         }));
-      })
-      .catch(error => {
-        console.error(error);
-      });
+      }
+    );
   }
 
   handleStreamSelection(selectedStream) {
-    this.props.handleSelectedStream(selectedStream);
+    //this.props.handleSelectedStream(selectedStream);
   }
 
   renderResults() {
     if (this.state.loadingDone) {
-      if (this.state.searchResults.streams.length > 0) {
+      if (this.state.searchResults.length > 0) {
         return (
           <SearchResults
             data={this.state.searchResults}
@@ -91,9 +91,9 @@ class SearchMode extends React.Component {
         />
         {this.state.isLoading ? (
           <ClipLoader
-            sizeUnit={"px"}
+            sizeUnit={'px'}
             size={150}
-            color={"#123abc"}
+            color={'#123abc'}
             loading={this.state.loading}
           />
         ) : null}

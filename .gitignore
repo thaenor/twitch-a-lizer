@@ -1,6 +1,7 @@
 # node
 node_modules
-config.json
+config
+client/build
 
 # General
 .DS_Store
