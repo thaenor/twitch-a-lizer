@@ -1,4 +1,4 @@
-# TWitch-A-Lizer
+# Twitch-A-Lizer
 
 This is a Twitch application, made as part of a coding challenge.
 
