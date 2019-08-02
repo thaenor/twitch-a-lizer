@@ -4,7 +4,8 @@
   "description": "This is a Twitch application, made as part of a coding challenge.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,7 @@
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
-    "config": "^3.2.2"
+    "config": "^3.2.2",
+    "nodemon": "^1.19.1"
   }
 }

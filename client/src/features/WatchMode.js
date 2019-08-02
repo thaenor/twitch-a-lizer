@@ -1,24 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactTwitchEmbedVideo from 'react-twitch-embed-video';
 import socketIOClient from 'socket.io-client';
 
 const WatchMode = props => {
+  const [watchingNow, setWatchingNow] = useState(0);
   const channelName = props.match.params.name;
   const state = props.location.state;
-  const socket = socketIOClient('localhost:5001');
-  socket.on('connection', data => console.log(data));
-  socket.emit('subscribeWatchNow', state._id);
-  socket.on('subscribeWatchNow', data => console.log(data));
 
-  function handleData(data) {
-    let result = JSON.parse(data);
-    console.log(result);
-  }
+  useEffect( () => {
+    const socket = socketIOClient('localhost:5001');
+    socket.on('connection', data => console.log(data));
+    socket.emit('subscribeWatchNow', state.channel._id);
+    socket.on('noViewers', data => {
+      console.log('No viewers: ',data.viewers);
+      setWatchingNow(data.viewers);
+    });
+    socket.on('viewersCount', data => {
+      console.log('viewersCount: ',data.viewers);
+      setWatchingNow(data.viewers);
+    });
+  }, []);
 
   return (
     <>
-      {/*<ReactTwitchEmbedVideo channel={channelName} /> */}
-      <h1>Watching Now: {state.viewers}</h1>
+      {/*<ReactTwitchEmbedVideo channel={channelName} />*/}
+      <h1>Watching Now: {watchingNow}</h1>
     </>
   );
 };
