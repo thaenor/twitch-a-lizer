@@ -1,8 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
-import TwitchALizer from './TwitchALizer';
-import './styles.css';
+import React from "react";
+import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
+import TwitchALizer from "./TwitchALizer";
+import "./styles.css";
 
 function App() {
   return (
@@ -14,5 +14,7 @@ function App() {
   );
 }
 
-const rootElement = document.getElementById('root');
+const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
+
+export default App;

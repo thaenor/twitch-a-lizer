@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 function createQuery(searchParam, totalResults) {
   const param = encodeURIComponent(searchParam);
@@ -6,11 +6,14 @@ function createQuery(searchParam, totalResults) {
 }
 
 async function requestManager(searchTerm, totalResults) {
-  if (typeof searchTerm === 'string' && searchTerm !== '') {
+  if (typeof searchTerm === "string" && searchTerm !== "") {
     const query = createQuery(searchTerm, totalResults);
     return makeRequest(query);
   } else {
     console.warn(`request not made, the search term was: ${searchTerm}`);
+    return {
+      streams: []
+    };
   }
 }
 
@@ -20,6 +23,7 @@ async function makeRequest(url) {
     return response.data;
   } catch (error) {
     console.error(error);
+    return "error";
   }
 }
 
