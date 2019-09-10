@@ -12,7 +12,7 @@ The list of features:
 - allow the user to view a stream
 - see a total viewers count updated in real time
 
-## Before you beguin
+## Before you begin
 
 Step 0: clone the repo `git clone https://github.com/thaenor/twitch-a-lizer.git`.
 
